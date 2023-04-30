@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "d3eb98d4-799f-4d4b-9bca-86225523f60b",
+		"name": "LA-03 APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14529820"
+	},
+	"item": [
+		{
+			"name": "Content-based filtering",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{dev_env}}user/recommend?filter=cb&user_id=A0505999GY3IIQK03WD1",
+					"host": [
+						"{{dev_env}}user"
+					],
+					"path": [
+						"recommend"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "cb",
+							"description": "Type of filtering to use - cb for content based or cf for collaborative"
+						},
+						{
+							"key": "user_id",
+							"value": "A0505999GY3IIQK03WD1",
+							"description": "The user_id specifies the user for whom item recommendations are requested."
+						}
+					]
+				},
+				"description": "This api retrieves the user's recommendations specified by user_id and content-based filtering technique."
+			},
+			"response": []
+		},
+		{
+			"name": "Collaborative filtering - User-based",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{dev_env}}user/recommend?filter=cf&user_id=A2RYSCZOPEXOCQ&type=user",
+					"host": [
+						"{{dev_env}}user"
+					],
+					"path": [
+						"recommend"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "cf",
+							"description": "Type of filtering to use - cb for content based or cf for collaborative"
+						},
+						{
+							"key": "user_id",
+							"value": "A2RYSCZOPEXOCQ",
+							"description": "The user_id specifies the user for whom item recommendations are requested."
+						},
+						{
+							"key": "type",
+							"value": "user",
+							"description": "The type of collaborative filtering - user-user or item-item"
+						}
+					]
+				},
+				"description": "This api retrieves the user's recommendations specified by user_id and collaborative filtering (user-user) technique."
+			},
+			"response": []
+		},
+		{
+			"name": "Collaborative filtering - Item-based",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{dev_env}}user/recommend?filter=cf&user_id=A2RYSCZOPEXOCQ&type=item",
+					"host": [
+						"{{dev_env}}user"
+					],
+					"path": [
+						"recommend"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "cf",
+							"description": "Type of filtering to use - cb for content based or cf for collaborative"
+						},
+						{
+							"key": "user_id",
+							"value": "A2RYSCZOPEXOCQ",
+							"description": "The user_id specifies the user for whom item recommendations are requested."
+						},
+						{
+							"key": "type",
+							"value": "item",
+							"description": "The type of collaborative filtering - user-user or item-item"
+						}
+					]
+				},
+				"description": "This api retrieves the user's recommendations specified by user_id and collaborative filtering (item-item) technique."
+			},
+			"response": []
+		}
+	]
+}
